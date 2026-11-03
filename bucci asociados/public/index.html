@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bucci y Asociados — Tu tecnología, nuestro compromiso</title>
+<meta name="description" content="Soporte técnico, redes y capacitaciones para pymes, comercios, instituciones y particulares en Tierra del Fuego.">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<script>try{var t=localStorage.getItem("bucci_tema");if(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t)document.documentElement.dataset.tema=t}catch(e){}</script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#inicio" class="brand">
+      <img src="img/logo.svg" alt="" width="40" height="44">
+      <span class="brand-name">BUCCI <em>Y ASOCIADOS</em></span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <i class="bi bi-list"></i>
+    </button>
+    <nav id="main-nav" class="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="admin.html" class="nav-admin">Admin</a></li>
+        <li><button type="button" class="tema-toggle" id="tema-toggle" aria-pressed="false" aria-label="Activar modo oscuro" title="Modo oscuro"><i class="bi bi-moon-stars-fill"></i></button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="inicio">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="kicker">Hardware · Redes · Soporte técnico · Capacitaciones</p>
+        <h1>Tu tecnología, <span>nuestro compromiso.</span></h1>
+        <p class="lead">Acompañamos a pymes, comercios, instituciones y particulares de Tierra del Fuego con diagnósticos claros, presupuestos transparentes y atención personalizada.</p>
+        <div class="hero-actions">
+          <a href="#servicios" class="btn btn-light">Ver servicios</a>
+          <a href="#contacto" class="btn btn-outline">Enviar consulta</a>
+        </div>
+      </div>
+      <img class="hero-logo" src="img/logo.svg" alt="Logo de Bucci y Asociados" width="260" height="286">
+    </div>
+  </section>
+
+  <section class="stats" aria-label="Bucci en números">
+    <div class="container stats-inner">
+      <div class="stat"><strong data-count="120">0</strong><span>equipos reparados</span></div>
+      <div class="stat"><strong data-count="40">0</strong><span>clientes atendidos</span></div>
+      <div class="stat"><strong data-count="15">0</strong><span>redes instaladas</span></div>
+      <div class="stat"><strong data-count="24" data-suffix=" h">0</strong><span>tiempo de respuesta</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="container">
+      <h2 class="section-title">Nosotros</h2>
+      <p class="section-intro">Bucci y Asociados es un equipo reducido de especialistas, cada uno a cargo de un área clave del servicio.</p>
+
+      <div class="cards three">
+        <article class="card">
+          <i class="bi bi-bullseye card-icon"></i>
+          <h3>Misión</h3>
+          <p>Resolver los problemas tecnológicos de nuestros clientes con rapidez, claridad y honestidad, para que puedan concentrarse en su trabajo.</p>
+        </article>
+        <article class="card">
+          <i class="bi bi-eye card-icon"></i>
+          <h3>Visión</h3>
+          <p>Ser la empresa de referencia en soporte informático y redes de la región, reconocida por su compromiso y su trato cercano.</p>
+        </article>
+        <article class="card">
+          <i class="bi bi-heart card-icon"></i>
+          <h3>Valores</h3>
+          <ul class="values">
+            <li>Compromiso con el cliente</li>
+            <li>Transparencia en costos</li>
+            <li>Actualización constante</li>
+            <li>Trabajo en equipo</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="subtitle">Equipo de trabajo</h3>
+      <div class="cards four">
+        <article class="member"><h4>Nicolás Bucci</h4><span>Fundador y Director General</span><p>Ingeniero en Sistemas. Dirección estratégica y relación con clientes corporativos.</p></article>
+        <article class="member"><h4>Martín Ibáñez</h4><span>Técnico en Hardware y Redes</span><p>Armado, reparación y mantenimiento de equipos; instalación de redes.</p></article>
+        <article class="member"><h4>Camila Torres</h4><span>Especialista en Soporte Técnico</span><p>Atención a clientes, resolución de incidencias y soporte remoto y presencial.</p></article>
+        <article class="member"><h4>Lucas Fernández</h4><span>Capacitador en Informática</span><p>Cursos de alfabetización digital y herramientas ofimáticas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="servicios">
+    <div class="container">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-intro">Soluciones para cada necesidad tecnológica.</p>
+      <div class="cards three" id="servicios-lista" aria-live="polite">
+        <p class="loading">Cargando servicios…</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proceso">
+    <div class="container">
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <p class="section-intro">Un proceso simple y sin sorpresas, de tu consulta a la solución.</p>
+      <div class="carousel" id="carousel">
+        <ol class="steps-track" id="steps-track">
+        <li class="step"><span class="step-num">1</span><h3>Consulta</h3><p>Nos contás el problema por el formulario, mail o teléfono.</p></li>
+        <li class="step"><span class="step-num">2</span><h3>Diagnóstico</h3><p>Relevamos el equipo o la red y te explicamos qué pasa.</p></li>
+        <li class="step"><span class="step-num">3</span><h3>Presupuesto</h3><p>Recibís un presupuesto claro, sin costos ocultos.</p></li>
+        <li class="step"><span class="step-num">4</span><h3>Solución</h3><p>Resolvemos y te acompañamos con seguimiento posterior.</p></li>
+      </ol>
+      </div>
+      <button type="button" class="carousel-toggle" id="carousel-toggle" aria-label="Pausar carrusel"><i class="bi bi-pause-fill"></i> <span>Pausar</span></button>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="container faq-wrap">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <details class="faq-item"><summary>¿Atienden a domicilio?</summary><p>Sí, realizamos visitas técnicas a oficinas, comercios y hogares. Coordinamos día y horario previamente.</p></details>
+      <details class="faq-item"><summary>¿Cuánto tardan en responder una consulta?</summary><p>Respondemos dentro de las 24 horas hábiles posteriores a recibir tu mensaje.</p></details>
+      <details class="faq-item"><summary>¿Los presupuestos tienen costo?</summary><p>No. El diagnóstico y el presupuesto son claros y transparentes, sin costos ocultos.</p></details>
+      <details class="faq-item"><summary>¿Dan capacitaciones a empresas e instituciones?</summary><p>Sí, dictamos cursos de herramientas ofimáticas, formación digital y seguridad informática básica.</p></details>
+    </div>
+  </section>
+
+  <section class="section" id="contacto">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-intro">Contanos qué necesitás y te respondemos a la brevedad.</p>
+        <ul class="contact-list">
+          <li><i class="bi bi-envelope"></i> <a href="mailto:contacto@bucciyasociados.com.ar">contacto@bucciyasociados.com.ar</a></li>
+          <li><i class="bi bi-telephone"></i> <a href="tel:+541140000000">(011) 4000-0000</a></li>
+          <li><i class="bi bi-geo-alt"></i> Tierra del Fuego, Argentina</li>
+        </ul>
+      </div>
+
+      <form id="form-consulta" class="form" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name">
+          <small class="error" id="error-nombre"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+          <small class="error" id="error-email"></small>
+        </div>
+        <div class="field">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+          <small class="error" id="error-telefono"></small>
+        </div>
+        <div class="field">
+          <label for="servicio">Servicio de interés (opcional)</label>
+          <select id="servicio" name="servicio"><option value="">Seleccioná un servicio</option></select>
+        </div>
+        <div class="field">
+          <label for="servicio_id">Servicio de interés (opcional)</label>
+          <select id="servicio_id" name="servicio_id"><option value="">Consulta general</option></select>
+        </div>
+        <div class="field">
+          <label for="asunto">Asunto *</label>
+          <input type="text" id="asunto" name="asunto">
+          <small class="error" id="error-asunto"></small>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje * <span class="hint">(mínimo 20 caracteres)</span></label>
+          <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+          <small class="error" id="error-mensaje"></small>
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-enviar">Enviar consulta</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <img src="img/logo.svg" alt="" width="34" height="37">
+    <p>Bucci y Asociados · Hardware, Redes, Soporte Técnico y Capacitaciones</p>
+    <p class="copy">© 2026 Bucci y Asociados</p>
+  </div>
+</footer>
+
+<a href="#inicio" class="to-top" id="to-top" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></a>
+
+<script src="js/main.js"></script>
+</body>
+</html>

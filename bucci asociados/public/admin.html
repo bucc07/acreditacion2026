@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de administración — Bucci y Asociados</title>
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<section id="vista-login" class="login-wrap">
+  <div class="login-split">
+    <aside class="login-brand">
+      <img src="img/logo.svg" alt="Bucci y Asociados" width="110" height="121">
+      <h2>Bucci y Asociados</h2>
+      <p class="slogan">Tu tecnología, nuestro compromiso.</p>
+      <ul>
+        <li><i class="bi bi-inbox"></i> Todas las consultas en un solo lugar</li>
+        <li><i class="bi bi-funnel"></i> Filtros por estado, fecha y búsqueda</li>
+        <li><i class="bi bi-shield-lock"></i> Acceso protegido solo para administradores</li>
+      </ul>
+    </aside>
+    <form id="form-login" class="login-card">
+      <h1>Iniciar sesión</h1>
+      <p class="muted">Ingresá con tu usuario para ver las consultas.</p>
+      <label for="usuario">Usuario</label>
+      <div class="input-icon"><i class="bi bi-person"></i><input type="text" id="usuario" autocomplete="username" placeholder="admin" required></div>
+      <label for="password">Contraseña</label>
+      <div class="input-icon"><i class="bi bi-lock"></i><input type="password" id="password" autocomplete="current-password" placeholder="••••••••" required>
+        <button type="button" class="ver-pass" id="ver-pass" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button></div>
+      <p class="login-error" id="login-error" role="alert"></p>
+      <button type="submit" class="btn btn-primary" id="btn-login">Ingresar</button>
+      <a href="index.html" class="back-link">← Volver al sitio</a>
+    </form>
+  </div>
+</section>
+
+<!-- ============ PANEL ============ -->
+<div id="vista-panel" hidden>
+  <header class="panel-header">
+    <div class="panel-brand">
+      <img src="img/logo.svg" alt="" width="34" height="37">
+      <strong>Consultas recibidas</strong>
+    </div>
+    <div class="panel-user">
+      <span id="admin-nombre"></span>
+      <a href="index.html" class="btn btn-ghost">Ver sitio</a>
+      <button class="btn btn-ghost" id="btn-logout"><i class="bi bi-box-arrow-right"></i> Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="panel-main">
+    <div class="resumen">
+      <div class="resumen-card"><i class="bi bi-inbox"></i><div><strong id="r-total">0</strong><span>Total</span></div></div>
+      <div class="resumen-card warn"><i class="bi bi-envelope-exclamation"></i><div><strong id="r-nuevas">0</strong><span>Sin leer</span></div></div>
+      <div class="resumen-card ok"><i class="bi bi-envelope-open"></i><div><strong id="r-leidas">0</strong><span>Leídas</span></div></div>
+    </div>
+
+    <form class="filtros" id="filtros">
+      <div class="f"><label for="f-q">Buscar</label><input type="search" id="f-q" placeholder="Nombre o email"></div>
+      <div class="f"><label for="f-estado">Estado</label>
+        <select id="f-estado"><option value="">Todas</option><option value="no_leidas">No leídas</option><option value="leidas">Leídas</option></select></div>
+      <div class="f"><label for="f-desde">Desde</label><input type="date" id="f-desde"></div>
+      <div class="f"><label for="f-hasta">Hasta</label><input type="date" id="f-hasta"></div>
+      <div class="f acciones">
+        <button type="button" class="btn btn-ghost" id="btn-limpiar">Limpiar</button>
+        <button type="button" class="btn btn-ghost" id="btn-csv"><i class="bi bi-download"></i> CSV</button>
+      </div>
+    </form>
+
+    <div class="tabla-wrap">
+      <table class="tabla">
+        <thead><tr><th>Estado</th><th>Nombre</th><th>Email</th><th>Asunto</th><th>Servicio</th><th>Servicio</th><th>Fecha</th><th></th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <p class="vacio" id="vacio" hidden>No hay consultas para mostrar.</p>
+    </div>
+  </main>
+</div>
+
+<!-- ============ DETALLE ============ -->
+<dialog id="detalle" class="detalle">
+  <div class="detalle-head">
+    <h2 id="d-asunto"></h2>
+    <button class="icon-btn" id="d-cerrar" aria-label="Cerrar"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <dl class="detalle-datos">
+    <div><dt>Nombre</dt><dd id="d-nombre"></dd></div>
+    <div><dt>Email</dt><dd><a id="d-email"></a></dd></div>
+    <div><dt>Teléfono</dt><dd id="d-telefono"></dd></div>
+    <div><dt>Fecha</dt><dd id="d-fecha"></dd></div>
+    <div><dt>Servicio</dt><dd id="d-servicio"></dd></div>
+    <div><dt>Servicio</dt><dd id="d-servicio"></dd></div>
+    <div><dt>Estado</dt><dd id="d-estado"></dd></div>
+    <div><dt>Leída por</dt><dd id="d-leida-por"></dd></div>
+  </dl>
+  <h3>Mensaje</h3>
+  <p class="detalle-mensaje" id="d-mensaje"></p>
+  <div class="detalle-acciones">
+    <button class="btn btn-primary" id="d-toggle"></button>
+    <button class="btn btn-danger" id="d-eliminar"><i class="bi bi-trash"></i> Eliminar</button>
+  </div>
+</dialog>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
